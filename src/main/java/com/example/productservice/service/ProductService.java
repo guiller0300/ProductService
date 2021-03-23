@@ -1,20 +1,9 @@
 package com.example.productservice.service;
 
-import java.io.IOException;
-import java.util.HashMap;
-
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import com.example.productservice.dto.ProductDto;
-import com.example.productservice.dto.ProductRequestDto;
 import com.example.productservice.repository.ProductRepository;
 import com.example.productservice.util.EntityDtoUtil;
 

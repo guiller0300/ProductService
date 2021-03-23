@@ -48,10 +48,10 @@ public class ProductController {
 	public Mono<ProductDto> insertProductTable(@RequestBody Mono<ProductDto> productDtoMono){
 		return this.service.insertProduct(productDtoMono);
 	}
-	@PostMapping("{subscriber}")
+	/*@PostMapping("{subscriber}")
 	public Mono<ProductDto> insertProductTable(@RequestBody ProductDto productDtoMono, @PathVariable String subscriber){
 		return this.service.insertProduct(productDtoMono, subscriber);
-	}
+	}*/
 	
 	@PutMapping("{id}")
 	public Mono<ResponseEntity<ProductDto>> updateProduct(@PathVariable int id, @RequestBody Mono<ProductDto> productMonoDto) {
