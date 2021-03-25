@@ -24,7 +24,8 @@ public class ProductStreamController {
 	//General Stream
 	@GetMapping(value ="stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 	public Flux<ProductDto> getProductUpdates(){
-		return this.flux;
+		return this.flux
+				.filter(dto -> dto.getSubscriber() == null);
 		
 	}
 	
@@ -32,6 +33,6 @@ public class ProductStreamController {
 	@GetMapping(value = "streams", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 	public Flux<ProductDto> getProductPriceUpdate(@RequestParam String subscriber){
 		return this.flux
-				.filter(dto -> dto.getSubscriber().equals(subscriber));
+				.filter(dto -> dto.getSubscriber() != null && dto.getSubscriber().equals(subscriber));
 	}
 }
